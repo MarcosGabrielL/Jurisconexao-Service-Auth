@@ -1,9 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package br.com.jurisconexao.auth.Auth.models;
+package br.com.jurisconexao.auth.models;
 
+import java.util.Objects;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,17 +17,18 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Revendedor")
-public class Revendedor {
+@Table(name = "Person")
+public class Person{
     
-     @Id
+  
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
      
     @Column(nullable = false, unique = true, length = 45)
     private String email;
      
-    @Column(nullable = true, length = 64)
+    @Column(nullable = false, length = 64)
     private String password;
      
     @Column(name = "first_name", nullable = false, length = 20)
@@ -33,21 +36,17 @@ public class Revendedor {
      
     @Column(name = "last_name", nullable = false, length = 64)
     private String lastName;
-    
-    @Column(nullable = false, unique = true, length = 45)
-    private String codigo;
 
-    public Revendedor() {
+    public Person() {
         super();
     }
 
-    public Revendedor(Long id, String email, String password, String firstName, String lastName, String codigo) {
+    public Person(Long id, String email, String password, String firstName, String lastName) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.codigo = codigo;
     }
 
     public Long getId() {
@@ -90,15 +89,32 @@ public class Revendedor {
         this.lastName = lastName;
     }
 
-    public String getCodigo() {
-        return codigo;
+    @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 59 * hash + Objects.hashCode(this.id);
+        return hash;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Person other = (Person) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        return true;
     }
-    
      
     
-    
+     
+
 }
