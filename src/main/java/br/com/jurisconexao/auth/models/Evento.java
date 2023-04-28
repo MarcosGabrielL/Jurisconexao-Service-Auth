@@ -1,12 +1,10 @@
-
-package br.com.jurisconexao.auth.Auth.models;
-
-import java.util.Date;
-
-/**
- *
- * @author Marcos
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
+package br.com.jurisconexao.auth.models;
+
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,10 +16,18 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Notification")
-public class Notification {
-
-	  @Id
+@Table(name = "Evento")
+public class Evento {
+    
+    /*SEVERE (highest)
+        WARNING
+        INFO
+        CONFIG
+        FINE
+        FINER
+        FINEST*/
+    
+    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
     @Column(nullable = false, unique = false, length = 30)
@@ -31,21 +37,18 @@ public class Notification {
     @Column(nullable = false, unique = false, length = 30)
     private String date;
     @Column(nullable = false, unique = false, length = 30)
+    //1 - Mostra
+    //2 - Não Mostra
     private String cod;
     @Column(nullable = false, unique = false, length = 30)
+    //1-Apafa ao ver
+    //2-Não apaga  ao ver
     private String level;
     //Email
      @Column(nullable = false, unique = false, length = 30)
     private String usuario;
-	 @Column(nullable = false, unique = false, length = 30)
-	private boolean isRead;
-       
 
-    public Notification() {
-        super();
-    }
-
-    public Notification(Long id, String message, String info, String date, String cod, String level, String usuario, boolean isRead) {
+    public Evento(Long id, String message, String info, String date, String cod, String level, String usuario) {
         this.id = id;
         this.message = message;
         this.info = info;
@@ -53,15 +56,12 @@ public class Notification {
         this.cod = cod;
         this.level = level;
         this.usuario = usuario;
-        this.isRead = isRead;
     }
 
-    public Long getId() {
-        return id;
-    }
+    
 
-    public void setId(Long id) {
-        this.id = id;
+    public Evento() {
+        super();
     }
 
     public String getMessage() {
@@ -104,6 +104,14 @@ public class Notification {
         this.level = level;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getUsuario() {
         return usuario;
     }
@@ -111,17 +119,7 @@ public class Notification {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-
-    public boolean isIsRead() {
-        return isRead;
-    }
-
-    public void setIsRead(boolean isRead) {
-        this.isRead = isRead;
-    }
-
-   
     
-    }
-        
-
+    
+    
+}
