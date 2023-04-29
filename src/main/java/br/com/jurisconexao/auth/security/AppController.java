@@ -67,7 +67,7 @@ public class AppController {
      
       
 	
-    @GetMapping("")
+    @GetMapping("/")
     public String viewHomePage() {
         return "index";
     }
