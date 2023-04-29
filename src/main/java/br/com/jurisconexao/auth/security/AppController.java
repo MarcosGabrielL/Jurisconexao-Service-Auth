@@ -65,6 +65,8 @@ public class AppController {
      @Autowired
     private VendedorService VendedorService;
      
+     @Autowired
+     private AuthenticationManager authenticationManager;
       
 	
     @GetMapping("/")
@@ -76,18 +78,14 @@ public class AppController {
      @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
               
-        // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    //String encodedPassword = passwordEncoder.encode(authRequest.getPassword());
-    //authRequest.setPassword(encodedPassword);
-      //  System.out.println("Senha: "+authRequest.getPassword());
-
-     /*   try {
+     
+      try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
             );
         } catch (Exception ex) {
             throw new Exception("inavalid username/password");
-        } */
+        } 
         return jwtUtil.generateToken(authRequest.getEmail());
        
     }

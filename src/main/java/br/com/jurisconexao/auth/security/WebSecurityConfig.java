@@ -1,8 +1,6 @@
 
 package br.com.jurisconexao.auth.security;
 
-import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
-import org.apache.hc.client5.http.impl.classic.HttpClientBuilder;
 /**
  *
  * @author Marcos
@@ -53,8 +51,6 @@ public class WebSecurityConfig {
 	public RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
-
-	
 
 	@Bean
 	public PasswordEncoder passwordEncoder() {
