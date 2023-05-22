@@ -51,7 +51,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:4200/")
 @RestController
 public class AppController {
     
@@ -79,7 +79,7 @@ public class AppController {
         return "index";
     }
 
-	
+	@CrossOrigin(origins = "http://localhost:4200/")
      @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
               
@@ -95,6 +95,7 @@ public class AppController {
        
     }
     
+	@CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         model.addAttribute("user", new User());
@@ -102,6 +103,7 @@ public class AppController {
         return "signupform";
     }
 
+	@CrossOrigin(origins = "http://localhost:4200/")
 @PostMapping("/process_register")
 public ResponseEntity<User> processRegister(@RequestBody User user) {
    // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
@@ -177,7 +179,7 @@ public ResponseEntity<User> processRegister(@RequestBody User user) {
         }*/
     return new ResponseEntity<>(newUser, HttpStatus.CREATED);
 }
-
+@CrossOrigin(origins = "http://localhost:4200/")
     @GetMapping("/users")
     public String listUsers(Model model) {
     List<User> listUsers = userRepo.findAll();
@@ -186,20 +188,20 @@ public ResponseEntity<User> processRegister(@RequestBody User user) {
     
     return "users";
 }
-
+@CrossOrigin(origins = "http://localhost:4200/")
  @GetMapping("/user/{email}")
     public ResponseEntity<User> getUserByEmail (@PathVariable("email") String email) {
         User user = userRepo.findByEmail(email);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
-
+@CrossOrigin(origins = "http://localhost:4200/")
 @GetMapping("/user/id/{email}")
     public ResponseEntity<User> getUserById (@PathVariable("email") Long email) {
         User user = userRepo.findByid(email);
         return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
-    
+    @CrossOrigin(origins = "http://localhost:4200/")
      @PostMapping("/sendingemail")
     public String generateEmail(@RequestBody AuthRequest authRequest) throws Exception {
               
