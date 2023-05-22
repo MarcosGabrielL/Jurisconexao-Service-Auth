@@ -88,12 +88,12 @@ public class WebSecurityConfig {
 						"/eventos/**","/vendidos/**","/files/**", "/filelist/**", "/download/**",
 						"/create/**","/generic/**","/notifications/**","/produtos/**", "/register",
 						"/user/**", "/cinefilos/**", "/textoes/**", "/uploadFile/**", "/file/**",
-						"/loja/**", "/vendas/**", "/auth/**", "/fretes/**", "/dominios/**", "/process_register/**").permitAll()
+						"/loja/**", "/vendas/**", "/auth/**", "/fretes/**", "/dominios/**", "/process_register/**", "/authenticate/**").permitAll()
 				.requestMatchers("/users").authenticated()
 				.anyRequest().authenticated()
 				)
 		.formLogin()
-		.loginPage("/authenticate")
+		.loginPage("/authenticate1")
 		.defaultSuccessUrl("/", true)
 		.failureUrl("/login-error")
 		.permitAll()
