@@ -60,10 +60,6 @@ public class Evento {
 
     
 
-    public Evento() {
-        super();
-    }
-
     public String getMessage() {
         return message;
     }
