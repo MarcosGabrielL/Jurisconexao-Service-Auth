@@ -51,8 +51,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin
 @RestController
-@CrossOrigin(origins = "*", allowedMethods = {"GET", "POST", "PUT", "DELETE"})
 public class AppController {
     
     @Autowired
