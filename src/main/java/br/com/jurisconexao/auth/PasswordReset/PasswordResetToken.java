@@ -29,26 +29,5 @@ public class PasswordResetToken {
 
    
 
-    public PasswordResetToken(String id, String resetPasswordToken) {
-        this.id = id;
-        this.resetPasswordToken = resetPasswordToken;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getResetPasswordToken() {
-        return resetPasswordToken;
-    }
-
-    public void setResetPasswordToken(String resetPasswordToken) {
-        this.resetPasswordToken = resetPasswordToken;
-    }
-
    
 }
