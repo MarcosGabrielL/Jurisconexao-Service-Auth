@@ -41,9 +41,6 @@ public class Notification {
 	private boolean isRead;
        
 
-    public Notification() {
-        super();
-    }
 
     public Notification(Long id, String message, String info, String date, String cod, String level, String usuario, boolean isRead) {
         this.id = id;

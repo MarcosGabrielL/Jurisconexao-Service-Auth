@@ -27,9 +27,7 @@ public class PasswordResetToken {
     @Column(name = "token", nullable = true, unique = true, length = 200)
     private String resetPasswordToken;
 
-    public PasswordResetToken() {
-        super();
-    }
+   
 
     public PasswordResetToken(String id, String resetPasswordToken) {
         this.id = id;

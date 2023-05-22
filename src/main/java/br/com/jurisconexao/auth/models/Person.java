@@ -37,9 +37,7 @@ public class Person{
     @Column(name = "last_name", nullable = false, length = 64)
     private String lastName;
 
-    public Person() {
-        super();
-    }
+    
 
     public Person(Long id, String email, String password, String firstName, String lastName) {
         this.id = id;

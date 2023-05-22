@@ -34,9 +34,6 @@ public class Dominio {
      private String urlpersonal;
      private String appurl;
 
-    public Dominio() {
-        super();
-    }
 
     public Dominio(Long id, String vendedor, String urlfree, String urlpersonal, String appurl) {
         this.id = id;

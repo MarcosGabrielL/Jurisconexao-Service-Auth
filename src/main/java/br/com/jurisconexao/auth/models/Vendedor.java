@@ -82,9 +82,7 @@ public class Vendedor {
             private String IdToken;
             private String CSC;
 
-    public Vendedor() {
-        super();
-    }
+   
 
     public Vendedor(Long id, String CNPJ, String nomefantasia, String descricao, String Cidade, String CEP, String CFOP, String razaosocial, String rua, String Bairro, String Numero, String Estado, String Uf, String telefone, String email, String Certificado, String NumeroSérie, int ambiente, int serie, String datainicio, String datafim, String CódigoRegimeTributario, String ICMS, String PIS, String COFINS, String IPI, int CTipo, String CSenha, String CValidade, String NCM, String CST, String CodigoCity, String InscricaoEstadual, String IBPT, String IdToken, String CSC) {
         this.id = id;

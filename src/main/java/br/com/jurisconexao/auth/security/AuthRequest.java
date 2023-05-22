@@ -37,10 +37,7 @@ public class AuthRequest {
 		this.email = email;
 		this.password = password;
 	}
-	public AuthRequest() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+	
 
    
 }
