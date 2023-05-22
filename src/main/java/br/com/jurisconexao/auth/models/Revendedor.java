@@ -37,10 +37,7 @@ public class Revendedor {
     @Column(nullable = false, unique = true, length = 45)
     private String codigo;
 
-    public Revendedor() {
-        super();
-    }
-
+   
     public Revendedor(Long id, String email, String password, String firstName, String lastName, String codigo) {
         this.id = id;
         this.email = email;

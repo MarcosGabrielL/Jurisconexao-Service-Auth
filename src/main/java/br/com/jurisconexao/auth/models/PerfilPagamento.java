@@ -49,9 +49,7 @@ public class PerfilPagamento {
         private String anovencimento;
         private String cvv;
 
-    public PerfilPagamento() {
-        super();
-    }
+  
 
     public PerfilPagamento(Long id, String email, String password, String firstName, String lastName, String banco, String tipoconta, String numeroconta, String agencia, String nomecompleto, String cpf, String numeroCartao1, String numeroCartao2, String numeroCartao3, String numeroCartao4, String titular, String mesvencimento, String anovencimento, String cvv) {
         this.id = id;
