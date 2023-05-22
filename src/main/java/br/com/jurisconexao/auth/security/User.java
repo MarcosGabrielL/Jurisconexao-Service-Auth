@@ -45,19 +45,7 @@ public class User {
     @Column(name = "tipo", nullable = false, length = 1)
     private String tipo;
 
-    public User() {
-        super();
-    }
-
-    public User(Long id, String email, String password, String firstName, String lastName, Boolean verify, String tipo) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.verify = verify;
-        this.tipo = tipo;
-    }
+   
 
     public Long getId() {
         return id;
