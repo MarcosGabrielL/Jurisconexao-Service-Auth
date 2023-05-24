@@ -93,7 +93,7 @@ public class AppController {
         } catch (Exception ex) {
 	      System.err.println(ex.getMessage());
            // throw new Exception("inavalid username/password");
-	       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(System.err.println(ex.getMessage()));
+	       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(ex.getMessage());
         } 
 	    return ResponseEntity.status(HttpStatus.OK).body(jwtUtil.generateToken(authRequest.getEmail()));
       
