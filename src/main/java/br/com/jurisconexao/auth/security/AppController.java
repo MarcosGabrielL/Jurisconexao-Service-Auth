@@ -47,7 +47,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -83,7 +84,7 @@ public class AppController {
 
 	@CrossOrigin(origins = "http://localhost:4200/")
      @PostMapping("/authenticate")
-    public String generateToken(@RequestBody AuthRequest authRequest) throws Exception { //change to entity
+    public ResponseEntity<?> generateToken(@RequestBody AuthRequest authRequest) throws Exception { //change to entity
               
       try {
             authenticationManager.authenticate(
@@ -92,8 +93,10 @@ public class AppController {
         } catch (Exception ex) {
 	      System.err.println(ex.getMessage());
            // throw new Exception("inavalid username/password");
+	       return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(System.err.println(ex.getMessage()));
         } 
-        return jwtUtil.generateToken(authRequest.getEmail());
+	    return ResponseEntity.status(HttpStatus.OK).body(jwtUtil.generateToken(authRequest.getEmail()));
+      
        
     }
     
