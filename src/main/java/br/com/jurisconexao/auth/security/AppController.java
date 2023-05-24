@@ -85,11 +85,9 @@ public class AppController {
      @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception { //change to entity
               
-	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-     
       try {
             authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), passwordEncoder.encode(authRequest.getPassword()))
+                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
             );
         } catch (Exception ex) {
 	      System.err.println(ex.getMessage());
