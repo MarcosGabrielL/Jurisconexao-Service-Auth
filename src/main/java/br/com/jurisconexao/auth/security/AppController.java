@@ -86,9 +86,6 @@ public class AppController {
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
               
 	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            //String encodedPassword = ;
-	    
-	    System.err.println(authRequest.getEmail() + ", " + authRequest.getPassword());
      
       try {
             authenticationManager.authenticate(
@@ -113,9 +110,9 @@ public class AppController {
 	@CrossOrigin(origins = "http://localhost:4200/")
 @PostMapping("/process_register")
 public ResponseEntity<User> processRegister(@RequestBody User user) {
-   // BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    //String encodedPassword = passwordEncoder.encode(user.getPassword());
-    //user.setPassword(encodedPassword);
+    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    String encodedPassword = passwordEncoder.encode(user.getPassword());
+    user.setPassword(encodedPassword);
     
     //SALVA USUARIO
      user.setVerify(false);
