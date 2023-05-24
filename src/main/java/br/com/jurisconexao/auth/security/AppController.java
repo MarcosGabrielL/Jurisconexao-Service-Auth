@@ -88,7 +88,7 @@ public class AppController {
 	    //BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
             //String encodedPassword = passwordEncoder.encode(password);
 	    
-	    System.err.println(authRequest.getEmail() + ", " + authRequest.getPassword())
+	    System.err.println(authRequest.getEmail() + ", " + authRequest.getPassword());
      
       try {
             authenticationManager.authenticate(
