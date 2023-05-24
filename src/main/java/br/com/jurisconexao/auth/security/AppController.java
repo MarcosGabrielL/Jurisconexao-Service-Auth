@@ -83,7 +83,7 @@ public class AppController {
 
 	@CrossOrigin(origins = "http://localhost:4200/")
      @PostMapping("/authenticate")
-    public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
+    public String generateToken(@RequestBody AuthRequest authRequest) throws Exception { //change to entity
               
 	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
      
@@ -93,7 +93,7 @@ public class AppController {
             );
         } catch (Exception ex) {
 	      System.err.println(ex.getMessage());
-            throw new Exception("inavalid username/password");
+           // throw new Exception("inavalid username/password");
         } 
         return jwtUtil.generateToken(authRequest.getEmail());
        
