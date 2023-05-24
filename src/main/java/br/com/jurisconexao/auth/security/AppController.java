@@ -85,14 +85,14 @@ public class AppController {
      @PostMapping("/authenticate")
     public String generateToken(@RequestBody AuthRequest authRequest) throws Exception {
               
-	    //BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-            //String encodedPassword = passwordEncoder.encode(password);
+	    BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+            //String encodedPassword = ;
 	    
 	    System.err.println(authRequest.getEmail() + ", " + authRequest.getPassword());
      
       try {
             authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), authRequest.getPassword())
+                    new UsernamePasswordAuthenticationToken(authRequest.getEmail(), passwordEncoder.encode(authRequest.getPassword()))
             );
         } catch (Exception ex) {
 	      System.err.println(ex.getMessage());
