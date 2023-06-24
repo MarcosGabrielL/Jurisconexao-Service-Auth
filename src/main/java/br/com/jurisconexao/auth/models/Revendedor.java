@@ -33,6 +33,21 @@ public class Revendedor {
     
     @Column(nullable = false, unique = true, length = 45)
     private String codigo;
+    
+     /*
+    1 - Emiele
+    2 - Jurisconexao
+    */
+    @Column(name = "instancia", nullable = false, length = 1)
+    private String instancia;
+   
+    public String getInstancia() {
+        return instancia;
+    }
+
+    public void setIinstancia(String instancia) {
+        this.instancia = instancia;
+    }
 
 	public Long getId() {
 		return id;

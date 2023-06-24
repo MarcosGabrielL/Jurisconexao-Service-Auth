@@ -36,6 +36,21 @@ public class Person{
      
     @Column(name = "last_name", nullable = false, length = 64)
     private String lastName;
+    
+     /*
+    1 - Emiele
+    2 - Jurisconexao
+    */
+    @Column(name = "instancia", nullable = false, length = 1)
+    private String instancia;
+   
+    public String getInstancia() {
+        return instancia;
+    }
+
+    public void setIinstancia(String instancia) {
+        this.instancia = instancia;
+    }
 
 	public Long getId() {
 		return id;
