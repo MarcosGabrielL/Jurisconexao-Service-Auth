@@ -83,6 +83,7 @@ public ResponseEntity<User> processRegister(@RequestBody User user) {
     BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     String encodedPassword = passwordEncoder.encode(user.getPassword());
     user.setPassword(encodedPassword);
+  //  System.err.println(user.toString());
     
     //SALVA USUARIO
      user.setVerify(false);

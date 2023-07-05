@@ -140,6 +140,12 @@ public class User {
     public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", firstName=" + firstName
+				+ ", lastName=" + lastName + ", verify=" + verify + ", tipo=" + tipo + ", instancia=" + instancia + "]";
+	}
      
     
      
